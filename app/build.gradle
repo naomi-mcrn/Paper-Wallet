@@ -43,10 +43,10 @@ if (file("./signing.properties").exists()) {
 android {
     compileSdkVersion 28
     defaultConfig {
-        versionCode 300
-        versionName "3.0.0"
-        applicationId "ru.valle.btc"
-        testApplicationId "ru.valle.btc.test"
+        versionCode 100
+        versionName "1.0.0"
+        applicationId "jp.cvmu.xpc"
+        testApplicationId "jp.cvmu.xpc.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         targetSdkVersion 28
         //noinspection MinSdkTooLow
