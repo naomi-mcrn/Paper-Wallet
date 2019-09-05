@@ -68,7 +68,7 @@ THE SOFTWARE.*/
     <string name="scan_title">Scanning…</string>
     <string name="scan">Scan…</string>
     <string name="paste">Paste…</string>
-    <string name="push_btc_tx_label">Copy XPChain transaction and open blockchain.info/pushtx…</string>
+    <string name="push_btc_tx_label">Copy XPChain transaction and open insight.xpchain.io…</string>
     <string name="push_bch_tx_label">Copy Bitcoin Cash transaction and open blockdozer.com…</string>
     <string name="btc_tx_description_for_clipboard">Send %1$s XPC to %2$s</string>
     <string name="bch_tx_description_for_clipboard">Send %1$s BCH to %2$s</string>

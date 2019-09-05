@@ -459,7 +459,7 @@ public final class MainActivity extends Activity {
                 new Intent(MainActivity.this, ScanActivity.class), REQUEST_SCAN_RECIPIENT_ADDRESS));
         sendBtcTxInBrowserButton.setOnClickListener(v -> {
             copyTextToClipboard(getString(R.string.btc_tx_description_for_clipboard, amountEdit.getText(), recipientAddressView.getText()), getString(spendBtcTxEdit));
-            String url = "https://blockchain.info/pushtx";
+            String url = "https://insight.xpchain.io/tx/send";
             openBrowser(url);
         });
         sendBchTxInBrowserButton.setOnClickListener(v -> {
@@ -1135,7 +1135,6 @@ public final class MainActivity extends Activity {
         spendBchTxEdit.setVisibility(View.GONE);
         sendBtcTxInBrowserButton.setVisibility(View.GONE);
         sendBchTxInBrowserButton.setVisibility(View.GONE);
-//        https://blockchain.info/pushtx
 
         if (unspentOutputs != null && !unspentOutputs.isEmpty() && !TextUtils.isEmpty(outputAddress) &&
                 keyPair != null && keyPair.address != null && requestedAmountToSend >= SEND_MAX && requestedAmountToSend != 0
