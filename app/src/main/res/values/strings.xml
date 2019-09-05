@@ -31,6 +31,7 @@ THE SOFTWARE.*/
         it down and keep in safe place, then generate another address to clean it.
     </string>
     <string name="generating_failed">Unable to generate a key, sorry.</string>
+    <string name="generating_failed2">Unable to generate a key, sorry.2</string>
     <string name="bad_private_key">Unable to decode private key</string>
     <string name="raw_tx_description_header">Now you can spend some coins from %1$s.</string>
     <string name="raw_tx_description">Paste hex-encoded raw transaction which have unspent outputs for the address. %1$s</string>

@@ -30,6 +30,7 @@ THE SOFTWARE.*/
     <string name="generate_button">Сгенерировать другой</string>
     <string name="private_key_desc">Биткоины с адреса сверху можно потратить с помощью закрытого ключа снизу. Запишите его на бумаге и храните в безопасном месте. Нажмите \"Сгенерировать другой\" для очистки этого ключа.</string>
     <string name="generating_failed">Странно, не удалось создать ключ.</string>
+    <string name="generating_failed2">Странно, не удалось создать ключ.2</string>
     <string name="bad_private_key">Не удалось декодировать этот ключ.</string>
     <string name="raw_tx_description_header">Теперь вы можете потратить биткоины с адреса %1$s.</string>
     <string name="raw_tx_description">Вставьте транзакцию в шестнадцатеричной кодировке с непотраченными выходами в поле снизу. %1$s</string>

@@ -127,11 +127,11 @@ public class Bech32Test extends TestCase {
     }
 
     public void testEncode() throws BitcoinException {
-        assertEquals("xpc1pqqqsq9txsp", Bech32.encodeSegwitAddress("xpc", 1, new byte[]{0, 1}));
+        assertEquals("xpc1qqqqsspttjq", Bech32.encodeSegwitAddress("xpc", 1, new byte[]{0, 1}));
     }
 
     public void testDecode() throws BitcoinException {
-        assertTrue(Arrays.equals(new byte[]{0, 1}, Bech32.decodeSegwitAddress("xpc", "xpc1pqqqsq9txsp").program));
+        assertTrue(Arrays.equals(new byte[]{0, 1}, Bech32.decodeSegwitAddress("xpc", "xpc1qqqqsspttjq").program));
     }
 
     public void testErrorCases() throws BitcoinException {

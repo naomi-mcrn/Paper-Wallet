@@ -999,7 +999,11 @@ public final class MainActivity extends Activity {
             insertingPrivateKeyProgrammatically = false;
         } else {
             privateKeyTypeView.setVisibility(View.GONE);
-            addressTextEdit.setText(getString(R.string.generating_failed));
+            if (keyPair == null){
+                addressTextEdit.setText(getString(R.string.generating_failed));
+            }else{
+                addressTextEdit.setText(getString(R.string.generating_failed2));
+            }
         }
         insertingAddressProgrammatically = false;
         updatePasswordView(keyPair);
