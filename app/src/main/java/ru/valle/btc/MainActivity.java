@@ -1329,7 +1329,7 @@ public final class MainActivity extends Activity {
         } else {
             throw new RuntimeException();
         }
-        String btcBch = bitcoinCash ? "BCH" : "BTC";
+        String btcBch = bitcoinCash ? "BCH" : "XPC";
         SpannableStringBuilder descBuilderBtc = new SpannableStringBuilder(descStr);
 
         int spanBegin = keyPair.address == null ? -1 : descStr.indexOf(keyPair.address.addressString);
