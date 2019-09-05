@@ -230,7 +230,7 @@ public class Bech32Test extends TestCase {
             fail();
         } catch (Exception ignored) {
         }
-        hrp = "Bc";
+        hrp = "XPc";
         data = new byte[90 - 7 - hrp.length()];
         try {
             Bech32.encode(hrp, data);
