@@ -41,20 +41,20 @@ public class Bech32Test extends TestCase {
 
     public void testInvalidAddresses() {
         String[] invalidAddresses = {
-                "tc1qw508d6qejxtdg4y5r3zarvary0c5xw7kg3g4ty",
-                "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5",
-                "BC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2",
-                "bc1rw5uspcuh",
-                "bc10w508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7kw5rljs90",
-                "BC1QR508D6QEJXTDG4Y5R3ZARVARYV98GJ9P",
-                "tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sL5k7",
-                "bc1zw508d6qejxtdg4y5r3zarvaryvqyzf3du",
-                "tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3pjxtptv",
-                "bc1gmk9yu"};
+                "txpc1qw508d6qejxtdg4y5r3zarvary0c5xw7kg3g4ty",
+                "xpc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5",
+                "XPC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2",
+                "xpc1rw5uspcuh",
+                "xpc10w508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7kw5rljs90",
+                "XPC1QR508D6QEJXTDG4Y5R3ZARVARYV98GJ9P",
+                "txbc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sL5k7",
+                "xpc1zw508d6qejxtdg4y5r3zarvaryvqyzf3du",
+                "txbc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3pjxtptv",
+                "xpc1gmk9yu"};
         for (String s : invalidAddresses) {
             try {
-                Bech32.decodeSegwitAddress("bc", s);
-                Bech32.decodeSegwitAddress("tb", s);
+                Bech32.decodeSegwitAddress("xpc", s);
+                Bech32.decodeSegwitAddress("txpc", s);
                 fail();
             } catch (BitcoinException ignored) {
             }
@@ -73,12 +73,12 @@ public class Bech32Test extends TestCase {
 
     public void testValidAddresses() throws BitcoinException {
         Item[] validAddress = new Item[]{
-                new Item("BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4",
+                new Item("XPC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4",
                         new byte[]{
                                 0x00, 0x14, 0x75, 0x1e, 0x76, (byte) 0xe8, 0x19, (byte) 0x91, (byte) 0x96, (byte) 0xd4, 0x54,
                                 (byte) 0x94, 0x1c, 0x45, (byte) 0xd1, (byte) 0xb3, (byte) 0xa3, 0x23, (byte) (byte) 0xf1, 0x43, 0x3b, (byte) 0xd6,
                         }),
-                new Item("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7",
+                new Item("txpc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7",
                         new byte[]{
                                 0x00, 0x20, 0x18, 0x63, 0x14, 0x3c, 0x14, (byte) 0xc5, 0x16, 0x68, 0x04,
                                 (byte) 0xbd, 0x19, 0x20, 0x33, 0x56, (byte) 0xda, 0x13, 0x6c, (byte) 0x98, 0x56, 0x78,
@@ -86,23 +86,23 @@ public class Bech32Test extends TestCase {
                                 0x62,
                         }),
 
-                new Item("bc1pw508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7k7grplx",
+                new Item("xpc1pw508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7k7grplx",
                         new byte[]{
                                 0x51, 0x28, 0x75, 0x1e, 0x76, (byte) 0xe8, 0x19, (byte) 0x91, (byte) 0x96, (byte) 0xd4, 0x54,
                                 (byte) 0x94, 0x1c, 0x45, (byte) 0xd1, (byte) 0xb3, (byte) 0xa3, 0x23, (byte) 0xf1, 0x43, 0x3b, (byte) 0xd6,
                                 0x75, 0x1e, 0x76, (byte) 0xe8, 0x19, (byte) 0x91, (byte) 0x96, (byte) 0xd4, 0x54, (byte) 0x94, 0x1c,
                                 0x45, (byte) 0xd1, (byte) 0xb3, (byte) 0xa3, 0x23, (byte) 0xf1, 0x43, 0x3b, (byte) 0xd6,
                         }),
-                new Item("BC1SW50QA3JX3S",
+                new Item("XPC1SW50QA3JX3S",
                         new byte[]{
                                 0x60, 0x02, 0x75, 0x1e,
                         }),
-                new Item("bc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj",
+                new Item("xpc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj",
                         new byte[]{
                                 0x52, 0x10, 0x75, 0x1e, 0x76, (byte) 0xe8, 0x19, (byte) 0x91, (byte) 0x96, (byte) 0xd4, 0x54,
                                 (byte) 0x94, 0x1c, 0x45, (byte) 0xd1, (byte) 0xb3, (byte) 0xa3, 0x23,
                         }),
-                new Item("tb1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy",
+                new Item("txpc1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy",
                         new byte[]{
                                 0x00, 0x20, 0x00, 0x00, 0x00, (byte) 0xc4, (byte) 0xa5, (byte) 0xca, (byte) 0xd4, 0x62, 0x21,
                                 (byte) 0xb2, (byte) 0xa1, (byte) 0x87, (byte) 0x90, 0x5e, 0x52, 0x66, 0x36, 0x2b, (byte) 0x99, (byte) 0xd5,
@@ -111,12 +111,12 @@ public class Bech32Test extends TestCase {
                         }),
         };
         for (Item test : validAddress) {
-            String hrp = "bc";
+            String hrp = "xpc";
             Transaction.Script.WitnessProgram wp;
             try {
                 wp = Bech32.decodeSegwitAddress(hrp, test.address);
             } catch (BitcoinException e) {
-                hrp = "tb";
+                hrp = "txpc";
                 wp = Bech32.decodeSegwitAddress(hrp, test.address);
             }
             byte[] output = wp.getBytes();
@@ -127,46 +127,46 @@ public class Bech32Test extends TestCase {
     }
 
     public void testEncode() throws BitcoinException {
-        assertEquals("bc1pqqqsq9txsp", Bech32.encodeSegwitAddress("bc", 1, new byte[]{0, 1}));
+        assertEquals("xpc1pqqqsq9txsp", Bech32.encodeSegwitAddress("xpc", 1, new byte[]{0, 1}));
     }
 
     public void testDecode() throws BitcoinException {
-        assertTrue(Arrays.equals(new byte[]{0, 1}, Bech32.decodeSegwitAddress("bc", "bc1pqqqsq9txsp").program));
+        assertTrue(Arrays.equals(new byte[]{0, 1}, Bech32.decodeSegwitAddress("xpc", "xpc1pqqqsq9txsp").program));
     }
 
     public void testErrorCases() throws BitcoinException {
         byte[] data = new byte[]{1};
         try {
-            Bech32.encodeSegwitAddress("bc", 1, data);
+            Bech32.encodeSegwitAddress("xpc", 1, data);
             fail();
         } catch (Exception ignored) {
         }
         data = new byte[41];
         try {
-            Bech32.encodeSegwitAddress("bc", 1, data);
+            Bech32.encodeSegwitAddress("xpc", 1, data);
             fail();
         } catch (Exception ignored) {
         }
         data = new byte[26];
         try {
-            Bech32.encodeSegwitAddress("bc", 0, data);
+            Bech32.encodeSegwitAddress("xpc", 0, data);
             fail();
         } catch (Exception ignored) {
         }
         data = new byte[20];
         try {
-            Bech32.encodeSegwitAddress("Bc", 0, data);
+            Bech32.encodeSegwitAddress("XPc", 0, data);
             fail();
         } catch (Exception ignored) {
         }
 
         try {
-            Bech32.encodeSegwitAddress("bc", -1, data);
+            Bech32.encodeSegwitAddress("xpc", -1, data);
             fail();
         } catch (Exception ignored) {
         }
         try {
-            Bech32.encodeSegwitAddress("bc", 17, data);
+            Bech32.encodeSegwitAddress("xpc", 17, data);
             fail();
         } catch (Exception ignored) {
         }
@@ -209,14 +209,14 @@ public class Bech32Test extends TestCase {
         } catch (Exception ignored) {
         }
         // Encode
-        String hrp = "bc";
+        String hrp = "xpc";
         data = new byte[0];
         String bech32String = Bech32.encode(hrp, data);
         assertEquals(bech32String, bech32String.toLowerCase(Locale.ENGLISH));
-        hrp = "BC";
+        hrp = "XPC";
         bech32String = Bech32.encode(hrp, data);
         assertEquals(bech32String, bech32String.toUpperCase(Locale.ENGLISH));
-        hrp = "bc";
+        hrp = "xpc";
         data = new byte[90 - 7 - hrp.length() + 1];
         try {
             Bech32.encode(hrp, data);
@@ -254,7 +254,7 @@ public class Bech32Test extends TestCase {
             fail();
         } catch (Exception ignored) {
         }
-        hrp = "bc";
+        hrp = "xpc";
         data = new byte[]{0, 31};
         Bech32.encode(hrp, data);
         data = new byte[]{32};
