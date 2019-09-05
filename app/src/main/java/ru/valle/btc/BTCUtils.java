@@ -114,7 +114,7 @@ public final class BTCUtils {
         if (value < 0) {
             throw new NumberFormatException("Negative value " + value);
         }
-        String s = String.format(Locale.US, "%.8f", value);
+        String s = String.format(Locale.US, "%.4f", value);
         while (s.length() > 1 && (s.endsWith("0") || s.endsWith(""))) {
             s = (s.substring(0, s.length() - 1));
         }
@@ -126,10 +126,10 @@ public final class BTCUtils {
             throw new NumberFormatException("Negative value " + value);
         }
         StringBuilder sb = new StringBuilder(Long.toString(value));
-        while (sb.length() <= 8) {
+        while (sb.length() <= 4) {
             sb.insert(0, '0');
         }
-        sb.insert(sb.length() - 8, '.');
+        sb.insert(sb.length() - 4, '.');
         while (sb.length() > 1 && (sb.charAt(sb.length() - 1) == '0' || sb.charAt(sb.length() - 1) == '.')) {
             sb.setLength(sb.length() - 1);
         }

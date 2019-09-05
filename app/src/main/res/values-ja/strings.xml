@@ -41,10 +41,10 @@ THE SOFTWARE.*/
 \n 2) またはオープン "blockchain.info/tx/[hash]?format=hex"</string>
     <string name="error_unable_to_decode_transaction">指定されたトランザクションをデコードすることができません</string>
     <string name="error_failed_to_create_transaction">トランザクションの作成時にエラー - いくつかの不明な理由が生成されました。トランザクションにエラーが含まれています。</string>
-    <string name="spend_btc_tx_description">下のトランザクションは %1$s BTC を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s BTC です。</string>
-    <string name="spend_btc_tx_with_change_description">下のトランザクションは %1$s BTC を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s BTC です。 %5$s BTC の変更が %2$s へ行われます。</string>
+    <string name="spend_btc_tx_description">下のトランザクションは %1$s XPC を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s XPC です。</string>
+    <string name="spend_btc_tx_with_change_description">下のトランザクションは %1$s XPC を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s XPC です。 %5$s XPC の変更が %2$s へ行われます。</string>
     <string name="spend_bch_tx_description">下のトランザクションは %1$s BCH を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s BCH です。</string>
-    <string name="spend_bch_tx_with_change_description">下のトランザクションは %1$s BCH を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s BTC です。 %5$s BCH の変更が %2$s へ行われます。</string>
+    <string name="spend_bch_tx_with_change_description">下のトランザクションは %1$s BCH を %2$s から %3$s へ転送します。 トランザクション手数料は %4$s XPC です。 %5$s BCH の変更が %2$s へ行われます。</string>
     <string name="spend_tx_warning_footer">sendrawtransaction xpchain-qt コマンドでプッシュすることができます。もう一度、何か問題があっても
         私に責任はありません。 アプリを慎重にテストし、トランザクションを検証していますが、誰もバグがないことを保証することはできません。
         そのため、ご自身のリスクで利用し、プッシュする前に TX の出力を慎重に検証してください。

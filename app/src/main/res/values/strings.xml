@@ -44,8 +44,8 @@ THE SOFTWARE.*/
     </string>
     <string name="error_unable_to_decode_transaction">Unable to decode given transaction</string>
     <string name="error_failed_to_create_transaction">Error creating transaction - for some unknown reason generated transaction contained an error.</string>
-    <string name="spend_btc_tx_description">Transaction below will transfer %1$s BTC from %2$s to %3$s. Transaction fee is %4$s BTC.</string>
-    <string name="spend_btc_tx_with_change_description">Transaction below will transfer %1$s BTC from %2$s to %3$s. Transaction fee is %4$s BTC. Change of %5$s BTC will go to %2$s.</string>
+    <string name="spend_btc_tx_description">Transaction below will transfer %1$s XPC from %2$s to %3$s. Transaction fee is %4$s XPC.</string>
+    <string name="spend_btc_tx_with_change_description">Transaction below will transfer %1$s XPC from %2$s to %3$s. Transaction fee is %4$s XPC. Change of %5$s XPC will go to %2$s.</string>
     <string name="spend_bch_tx_description">Transaction below will transfer %1$s BCH from %2$s to %3$s. Transaction fee is %4$s BCH.</string>
     <string name="spend_bch_tx_with_change_description">Transaction below will transfer %1$s BCH from %2$s to %3$s. Transaction fee is %4$s BCH. Change of %5$s BCH will go to %2$s.</string>
     <string name="spend_tx_warning_footer">You can push it with sendrawtransaction xpchain-qt command. And again, I have no responsibility if
