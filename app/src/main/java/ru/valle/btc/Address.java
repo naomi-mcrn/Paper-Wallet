@@ -48,7 +48,7 @@ public final class Address {
         }
         if (address.length() > 3) {
             String prefix = address.substring(0, 2).toLowerCase(Locale.ENGLISH);
-            if (prefix.equals("bc") || prefix.equals("tc")) {
+            if (prefix.equals("xpc") || prefix.equals("txpc")) {
                 witnessProgram = Bech32.decodeSegwitAddress(prefix, address);
                 hash160 = null;
                 keyhashType = TYPE_NONE;
@@ -79,7 +79,7 @@ public final class Address {
         this.witnessProgram = witnessProgram;
         keyhashType = TYPE_NONE;
         hash160 = null;
-        addressString = Bech32.encodeSegwitAddress(testNet ? "bc" : "tc", witnessProgram.version, witnessProgram.program);
+        addressString = Bech32.encodeSegwitAddress(testNet ? "txpc" : "xpc", witnessProgram.version, witnessProgram.program);
     }
 
     @Override
@@ -118,7 +118,7 @@ public final class Address {
             return null; //key should be compressed
         }
         try {
-            return Bech32.encodeSegwitAddress(testNet ? "tc" : "bc", 0, BTCUtils.sha256ripemd160(publicKey));
+            return Bech32.encodeSegwitAddress(testNet ? "txpc" : "xpc", 0, BTCUtils.sha256ripemd160(publicKey));
         } catch (BitcoinException unexpected) {
             throw new RuntimeException(unexpected);
         }
