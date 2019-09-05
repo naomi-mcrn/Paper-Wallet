@@ -24,10 +24,10 @@ THE SOFTWARE.*/
 -->
 <resources>
     <string name="app_name">ペーパー ウォレット</string>
-    <string name="generating">Bitcoin アドレスを生成中…</string>
+    <string name="generating">XPChain アドレスを生成中…</string>
     <string name="decoding">秘密鍵をデコード中…</string>
     <string name="generate_button">別のものを生成</string>
-    <string name="private_key_desc">下の秘密鍵を使用して、上の Bitcoin アドレスからお金を使うことができます。
+    <string name="private_key_desc">下の秘密鍵を使用して、上の XPChain アドレスからお金を使うことができます。
         これを書き留めて安全な場所に保存してください。 別のアドレスを生成して、クリアすることができます。
     </string>
     <string name="generating_failed">キーを生成できません。</string>
@@ -55,7 +55,7 @@ THE SOFTWARE.*/
     <string name="spend_tx_hint">トランザクションの生成中…</string>
     <string name="invalid_address">アドレスが正しくありません</string>
     <string name="private_key_type">秘密鍵の種類: %1$s</string>
-    <string name="amount_hint">BTC</string>
+    <string name="amount_hint">XPC</string>
     <string name="error_amount_parsing">金額が正しくありません</string>
     <string name="error_not_enough_funds">要求した金額が利用可能な残高から手数料を引いた金額より大きいです。</string>
     <string name="error_unknown">不明なエラー</string>
@@ -67,7 +67,7 @@ THE SOFTWARE.*/
     <string name="paste">貼り付け…</string>
     <string name="push_btc_tx_label">トランザクションをコピーして blockchain.info/pushtx を開く…</string>
     <string name="push_bch_tx_label">トランザクションをコピーして blockdozer.com を開く…</string>
-    <string name="btc_tx_description_for_clipboard">%1$s BTC を %2$s へ送信</string>
+    <string name="btc_tx_description_for_clipboard">%1$s XPC を %2$s へ送信</string>
     <string name="bch_tx_description_for_clipboard">%1$s BCH を %2$s へ送信</string>
     <string name="hint_password">パスワード</string>
     <string name="encrypt_private_key">秘密鍵を暗号化</string>
@@ -93,7 +93,7 @@ THE SOFTWARE.*/
     <string name="fee_is_greater_than_available_balance">生成されたトランザクションが怪しい大きな手数料を持っています。 開発者に報告してください。</string>
     <string name="json_err_no_unspent_outputs">\"unspent_outputs\" 配列が見つかりませんでした</string>
     <string name="error_unable_to_decode_json_transaction">この JSON をデコードできません。\n%s</string>
-    <string name="no_apps_to_view_url">申訳ありません。このアドレスを表示する Bitcoin クライアントがインストールされていません</string>
+    <string name="no_apps_to_view_url">申訳ありません。このアドレスを表示する XPChain クライアントがインストールされていません</string>
     <string name="unable_to_open_browser">奇妙なことに、Web ブラウザーを開くことができません。</string>
     <string name="no_camera_permission_granted">カメラのアクセス許可が付与されていません</string>
     <string name="ok">OK</string>

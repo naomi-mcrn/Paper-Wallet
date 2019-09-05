@@ -58,7 +58,7 @@ THE SOFTWARE.*/
     <string name="spend_tx_hint">Generating transaction…</string>
     <string name="invalid_address">Invalid address</string>
     <string name="private_key_type">Private key type: %1$s</string>
-    <string name="amount_hint">BTC</string>
+    <string name="amount_hint">XPC</string>
     <string name="error_amount_parsing">Invalid amount</string>
     <string name="error_not_enough_funds">Requested amount is bigger than available balance minus fee.</string>
     <string name="error_unknown">Unknown error</string>
@@ -68,9 +68,9 @@ THE SOFTWARE.*/
     <string name="scan_title">Scanning…</string>
     <string name="scan">Scan…</string>
     <string name="paste">Paste…</string>
-    <string name="push_btc_tx_label">Copy Bitcoin transaction and open blockchain.info/pushtx…</string>
+    <string name="push_btc_tx_label">Copy XPChain transaction and open blockchain.info/pushtx…</string>
     <string name="push_bch_tx_label">Copy Bitcoin Cash transaction and open blockdozer.com…</string>
-    <string name="btc_tx_description_for_clipboard">Send %1$s BTC to %2$s</string>
+    <string name="btc_tx_description_for_clipboard">Send %1$s XPC to %2$s</string>
     <string name="bch_tx_description_for_clipboard">Send %1$s BCH to %2$s</string>
     <string name="hint_password">Password</string>
     <string name="encrypt_private_key">Encrypt private key</string>
