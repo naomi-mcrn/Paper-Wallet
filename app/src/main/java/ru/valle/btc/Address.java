@@ -14,10 +14,10 @@ import java.util.Locale;
 import static ru.valle.btc.BTCUtils.decodeBase58;
 
 public final class Address {
-    static final int TYPE_MAINNET = 0;
-    static final int TYPE_TESTNET = 111;
-    static final int TYPE_P2SH = 5;
-    static final int TYPE_P2SH_TESTNET = 196;
+    static final int TYPE_MAINNET = 76;
+    static final int TYPE_TESTNET = 138;
+    static final int TYPE_P2SH = 28;
+    static final int TYPE_P2SH_TESTNET = 88;
     static final int TYPE_NONE = -1;
 
     static final int PUBLIC_KEY_TO_ADDRESS_LEGACY = 1;

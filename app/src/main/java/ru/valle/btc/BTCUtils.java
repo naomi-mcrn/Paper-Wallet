@@ -70,12 +70,15 @@ public final class BTCUtils {
     private static final char[] BASE58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray();
     public static final TrulySecureRandom SECURE_RANDOM = new TrulySecureRandom();
     static final BigInteger LARGEST_PRIVATE_KEY = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);//SECP256K1_N
-    public static final long MAX_ALLOWED_FEE = BTCUtils.parseValue("0.1");
-    public static final float EXPECTED_BLOCKS_PER_DAY = 144.0f;//(expected confirmations per day)
+    public static final long MAX_ALLOWED_FEE = BTCUtils.parseValue("1000.0");
+    public static final float EXPECTED_BLOCKS_PER_DAY = 1440.0f;//(expected confirmations per day)
     private static final int MAX_SCRIPT_ELEMENT_SIZE = 520;
     public static final int TRANSACTION_TYPE_LEGACY = 0;
     public static final int TRANSACTION_TYPE_BITCOIN_CASH = 1;
     public static final int TRANSACTION_TYPE_SEGWIT = 2;
+
+    static final int PRIVKEY_PREFIX_MAIN = 128;
+    static final int PRIVKEY_PREFIX_TEST = 239;
 
     static {
         X9ECParameters params = SECNamedCurves.getByName("secp256k1");
@@ -205,9 +208,9 @@ public final class BTCUtils {
         if (encodedPrivateKey.length() > 0) {
             try {
                 byte[] decoded = decodeBase58(encodedPrivateKey);
-                if (decoded != null && (decoded.length == 37 || decoded.length == 38) && ((decoded[0] & 0xff) == 0x80 || (decoded[0] & 0xff) == 0xef)) {
+                if (decoded != null && (decoded.length == 37 || decoded.length == 38) && ((decoded[0] & 0xff) == PRIVKEY_PREFIX_MAIN || (decoded[0] & 0xff) == PRIVKEY_PREFIX_TEST)) {
                     if (verifyDoubleSha256Checksum(decoded)) {
-                        boolean testNet = (decoded[0] & 0xff) == 0xef;
+                        boolean testNet = (decoded[0] & 0xff) == PRIVKEY_PREFIX_TEST;
                         byte[] secret = new byte[32];
                         System.arraycopy(decoded, 1, secret, 0, secret.length);
                         boolean isPublicKeyCompressed;
@@ -443,7 +446,7 @@ public final class BTCUtils {
         try {
             MessageDigest digestSha = MessageDigest.getInstance("SHA-256");
             byte[] rawPrivateKey = new byte[38];
-            rawPrivateKey[0] = (byte) (testNet ? 0xef : 0x80);
+            rawPrivateKey[0] = (byte) (testNet ? PRIVKEY_PREFIX_TEST : PRIVKEY_PREFIX_MAIN);
             rawPrivateKey[rawPrivateKey.length - 5] = 1;
             byte[] secret;
             BigInteger privateKeyBigInteger;
@@ -470,7 +473,7 @@ public final class BTCUtils {
         try {
             MessageDigest digestSha = MessageDigest.getInstance("SHA-256");
             byte[] rawPrivateKey = new byte[isPublicKeyCompressed ? 38 : 37];
-            rawPrivateKey[0] = (byte) (testNet ? 0xef : 0x80);
+            rawPrivateKey[0] = (byte) (testNet ? PRIVKEY_PREFIX_TEST : PRIVKEY_PREFIX_MAIN);
             if (isPublicKeyCompressed) {
                 rawPrivateKey[rawPrivateKey.length - 5] = 1;
             }
