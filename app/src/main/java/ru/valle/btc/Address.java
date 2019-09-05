@@ -46,9 +46,12 @@ public final class Address {
         if (address == null) {
             throw new BitcoinException(BitcoinException.ERR_BAD_FORMAT, "Null address");
         }
-        if (address.length() > 3) {
-            String prefix = address.substring(0, 2).toLowerCase(Locale.ENGLISH);
-            if (prefix.equals("xpc") || prefix.equals("txpc")) {
+        if (address.length() > 4) {
+            String prefix = address.substring(0, 3).toLowerCase(Locale.ENGLISH);
+            if (prefix.equals("xpc") || prefix.equals("txp")) {
+                if (prefix.equals("txp")){
+                    prefix = "txpc";//restore valid prefix
+                }
                 witnessProgram = Bech32.decodeSegwitAddress(prefix, address);
                 hash160 = null;
                 keyhashType = TYPE_NONE;
