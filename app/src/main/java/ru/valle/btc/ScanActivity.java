@@ -60,9 +60,12 @@ public final class ScanActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	//PROHIBITING SCREENSHOT IS BAD CULTURE!! EVEN IF SECURITY LEVEL FALLING INTO HADES.
+	/*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         }
+	*/
         if (Build.VERSION.SDK_INT < 23 || hasCameraPermission()) {
             createCameraSource();
         } else {

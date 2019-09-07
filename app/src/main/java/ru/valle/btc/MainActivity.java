@@ -148,9 +148,12 @@ public final class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         mainLayout = findViewById(R.id.main);
+	//PROHIBITING SCREENSHOT IS BAD CULTURE!! EVEN IF SECURITY LEVEL FALLING INTO HADES.
+	/*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        }
+	}
+	*/
         segwitAddressSwitch = findViewById(R.id.segwit_address_switch);
         addressTextEdit = findViewById(R.id.address_label);
         generateButton = findViewById(R.id.generate_button);
