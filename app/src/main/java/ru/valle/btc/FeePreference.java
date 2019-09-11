@@ -32,8 +32,8 @@ import java.text.ParseException;
 
 @SuppressWarnings("unused")
 public class FeePreference extends EditTextPreference {
-    private static final int PREF_FEE_SAT_MAX = 1000;
-    public static final int PREF_FEE_SAT_BYTE_DEFAULT = 50;
+    private static final int PREF_FEE_SAT_MAX = 1000;//0.1 XPC per byte
+    public static final int PREF_FEE_SAT_BYTE_DEFAULT = 1;//1 mocha per byte
     private static final String TAG = "FeePreference";
 
     public FeePreference(Context context, AttributeSet attrs, int defStyle) {
