@@ -115,8 +115,12 @@ public final class BTCUtils {
             throw new NumberFormatException("Negative value " + value);
         }
         String s = String.format(Locale.US, "%.4f", value);
-        while (s.length() > 1 && (s.endsWith("0") || s.endsWith(""))) {
+        while (s.length() > 1 && (s.endsWith("0"))) {
             s = (s.substring(0, s.length() - 1));
+            if (s.endsWith(".")){
+                s = (s.substring(0, s.length() - 1));
+                break;
+            }
         }
         return s;
     }
@@ -137,7 +141,7 @@ public final class BTCUtils {
     }
 
     public static long parseValue(String valueStr) throws NumberFormatException {
-        return new BigDecimal(valueStr).multiply(BigDecimal.valueOf(1_0000_0000)).setScale(0, BigDecimal.ROUND_HALF_DOWN).longValueExact();
+        return new BigDecimal(valueStr).multiply(BigDecimal.valueOf(1_0000)).setScale(0, BigDecimal.ROUND_HALF_DOWN).longValueExact();
     }
 
     public static long calcMinimumFee(int txSizeVBytes, float satoshisPerVirtualByte) {

@@ -646,7 +646,7 @@ public final class MainActivity extends Activity {
             try {
                 double requestedAmountToSendDouble = Double.parseDouble(amountStr);
                 long requestedAmountToSend = (long) (requestedAmountToSendDouble * 1e4);
-                if (requestedAmountToSendDouble > 0 && requestedAmountToSendDouble < 210000000000 && requestedAmountToSend > 0) {
+                if (requestedAmountToSendDouble > 0 && requestedAmountToSendDouble < 210000000000.0 && requestedAmountToSend > 0) {
                     verifiedAmountToSendForTx = requestedAmountToSend;
                     amountError.setText("");
                     tryToGenerateSpendingTransaction();
