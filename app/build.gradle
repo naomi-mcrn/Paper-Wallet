@@ -43,8 +43,8 @@ if (file("./signing.properties").exists()) {
 android {
     compileSdkVersion 28
     defaultConfig {
-        versionCode 105
-        versionName "1.0.5"
+        versionCode 106
+        versionName "1.0.6"
         applicationId "jp.cvmu.xpc"
         testApplicationId "jp.cvmu.xpc.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

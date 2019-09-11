@@ -134,8 +134,12 @@ public final class BTCUtils {
             sb.insert(0, '0');
         }
         sb.insert(sb.length() - 4, '.');
-        while (sb.length() > 1 && (sb.charAt(sb.length() - 1) == '0' || sb.charAt(sb.length() - 1) == '.')) {
+        while (sb.length() > 1 && (sb.charAt(sb.length() - 1) == '0')) {
             sb.setLength(sb.length() - 1);
+            if (sb.charAt(sb.length() - 1) == '.'){
+                sb.setLength(sb.length() - 1);
+                break;
+            }
         }
         return sb.toString();
     }
